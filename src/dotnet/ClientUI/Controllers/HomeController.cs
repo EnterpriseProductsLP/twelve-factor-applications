@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ClientUI.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace ClientUI.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IConfiguration configuration, ILogger<HomeController> logger)
         {
+            _configuration = configuration;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            var connectionString = _configuration["ClientUI:ConnectionString"];
+            _logger.LogTrace(connectionString);
             return View();
         }
 
