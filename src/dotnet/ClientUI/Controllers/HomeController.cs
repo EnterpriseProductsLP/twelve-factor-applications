@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ClientUI.Models;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.EnvironmentVariables;
 
 namespace ClientUI.Controllers
 {
@@ -19,8 +21,9 @@ namespace ClientUI.Controllers
 
         public IActionResult Index()
         {
-            var connectionString = _configuration["ClientUI:ConnectionString"];
-            _logger.LogTrace(connectionString);
+            var foobar = _configuration["Foo:Bar"];
+            var bazqux = _configuration["Baz:Qux"];
+
             return View();
         }
 
