@@ -50,5 +50,15 @@ namespace ClientUI.Controllers
 
             return View(model);
         }
+
+        public ViewResult FromEnvironmentVariables()
+        {
+            var model = new ConfigViewModel
+            {
+                Value = _configuration["ClientUI:FromEnvironmentVariables"]
+            };
+
+            return View(model);
+        }
     }
 }

@@ -1,0 +1,21 @@
+﻿@model ClientUI.Controllers.ConfigViewModel
+
+@{
+    ViewData["Title"] = "Config value from environment variables";
+}
+
+<h1>Config value from environment variables</h1>
+
+<p>For this example to work properly, you must have:</p>
+<ul>
+    <li>A configuration value named ClientUI:FromEnvironmentVariables in appsettings.json.  This value will be overriden by another value in appsettings.Development.json.</li>
+    <li>A different configuration value named ClientUI:FromEnvironmentVariables in appsettings.Development.json.  This value will be overriden by another value in a user secret during development only.</li>
+    <li>A different configuration value in a user secret named ClientUI:FromEnvironmentVariables.  Create this by running 'dotnet user-secrets set ClientUI:FromEnvironmentVariables "This value is from user secrets."'  This value will be overriden by another value in an environment variable.</li>
+    <li>A different configuration value in an environment variable named ClientUI:FromEnvironmentVariables.  Create this by running 'setx ClientUI:FromEnvironmentVariables "This value is from environment variables."'  This will be the final configuration value.</li>
+</ul>
+
+<div class="card">
+    <div class="card-header">
+        <strong>Configuration Value</strong>:  @Model.Value
+    </div>
+</div>
