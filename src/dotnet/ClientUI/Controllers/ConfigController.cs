@@ -15,6 +15,7 @@ namespace ClientUI.Controllers
         {
             _configuration = configuration;
         }
+
         public ViewResult Index()
         {
             return View();
@@ -35,6 +36,16 @@ namespace ClientUI.Controllers
             var model = new ConfigViewModel
             {
                 Value = _configuration["ClientUI:FromAppSettingsEnvironmentValue"]
+            };
+
+            return View(model);
+        }
+
+        public ViewResult FromUserSecrets()
+        {
+            var model = new ConfigViewModel
+            {
+                Value = _configuration["ClientUI:FromUserSecrets"]
             };
 
             return View(model);
