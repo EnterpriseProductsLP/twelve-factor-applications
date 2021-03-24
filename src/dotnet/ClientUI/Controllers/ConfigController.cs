@@ -22,7 +22,12 @@ namespace ClientUI.Controllers
 
         public ViewResult FromAppSettings()
         {
-            return View();
+            var model = new ConfigViewModel
+            {
+                Value = _configuration["ClientUI:AppSettingValue"]
+            };
+
+            return View(model);
         }
     }
 }
