@@ -24,7 +24,7 @@ namespace ClientUI.Controllers
         {
             var model = new ConfigViewModel
             {
-                Value = _configuration["ClientUI:AppSettingValue"]
+                Value = _configuration["ClientUI:FromAppSettingsValue"]
             };
 
             return View(model);
