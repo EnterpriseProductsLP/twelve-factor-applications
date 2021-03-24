@@ -29,5 +29,15 @@ namespace ClientUI.Controllers
 
             return View(model);
         }
+
+        public ViewResult FromAppSettingsEnvironment()
+        {
+            var model = new ConfigViewModel
+            {
+                Value = _configuration["ClientUI:FromAppSettingsEnvironmentValue"]
+            };
+
+            return View(model);
+        }
     }
 }
