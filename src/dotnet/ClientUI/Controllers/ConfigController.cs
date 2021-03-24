@@ -22,7 +22,7 @@ namespace ClientUI.Controllers
 
         public ViewResult FromAppSettings()
         {
-            var 
+            return View();
         }
     }
 }
