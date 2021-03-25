@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Configuration Examples";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Configuration Examples:</h1>
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromAppSettings">From appsettings.json</a></p>
+
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromAppSettingsEnvironment">From appsettings.[Environment].json</a></p>
+    
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromUserSecrets">From user secrets</a></p>
+    
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromEnvironmentVariables">From environment variables</a></p>
+</div>

@@ -1,0 +1,19 @@
+﻿@model ClientUI.Controllers.ConfigViewModel
+
+@{
+    ViewData["Title"] = "Config value from appsettings.[Environment].json";
+}
+
+<h1>Config value from appsettings.[Environment].json</h1>
+
+<p>For this example to work properly, you must have:</p>
+<ul>
+    <li>A configuration value named ClientUI:FromAppSettingsEnvironment in appsettings.json.  This value will be overriden by another value in appsettings.Development.json.</li>
+    <li>A different configuration value named ClientUI:FromAppSettingsEnvironment in appsettings.Development.json.  This will be the final configuration value.</li>
+</ul>
+
+<div class="card">
+    <div class="card-header">
+        <strong>Configuration Value</strong>:  @Model.Value
+    </div>
+</div>
