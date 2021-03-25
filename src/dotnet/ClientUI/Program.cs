@@ -14,6 +14,7 @@ namespace ClientUI
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // Uses kestrel by default.
                     webBuilder.UseStartup<Startup>();
                 });
     }
