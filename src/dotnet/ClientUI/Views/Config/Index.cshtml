@@ -4,8 +4,11 @@
 
 <div class="text-center">
     <h1 class="display-4">Configuration Examples:</h1>
-    <p>@Html.ActionLink("From appsettings.json", "FromAppSettings", "Config")</p>
-    <p>@Html.ActionLink("From appsettings.[Environment].json", "FromAppSettingsEnvironment", "Config")</p>
-    <p>@Html.ActionLink("From user secrets", "FromUserSecrets", "Config")</p>
-    <p>@Html.ActionLink("From environment variables", "FromEnvironmentVariables", "Config")</p>
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromAppSettings">From appsettings.json</a></p>
+
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromAppSettingsEnvironment">From appsettings.[Environment].json</a></p>
+    
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromUserSecrets">From user secrets</a></p>
+    
+    <p><a class="nav-link" asp-area="" asp-controller="Config" asp-action="FromEnvironmentVariables">From environment variables</a></p>
 </div>

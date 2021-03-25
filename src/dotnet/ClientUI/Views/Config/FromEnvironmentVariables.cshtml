@@ -11,7 +11,12 @@
     <li>A configuration value named ClientUI:FromEnvironmentVariables in appsettings.json.  This value will be overriden by another value in appsettings.Development.json.</li>
     <li>A different configuration value named ClientUI:FromEnvironmentVariables in appsettings.Development.json.  This value will be overriden by another value in a user secret during development only.</li>
     <li>A different configuration value in a user secret named ClientUI:FromEnvironmentVariables.  Create this by running 'dotnet user-secrets set ClientUI:FromEnvironmentVariables "This value is from user secrets."'  This value will be overriden by another value in an environment variable.</li>
-    <li>A different configuration value in an environment variable named ClientUI:FromEnvironmentVariables.  Create this by running 'setx ClientUI:FromEnvironmentVariables "This value is from environment variables."'  This will be the final configuration value.</li>
+    <li>A different configuration value in an environment variable named ClientUI:FromEnvironmentVariables.  This will be the final configuration value.
+        <ul>
+            <li>On Windows, you can create this by running 'setx ClientUI:FromEnvironmentVariables "This value is from environment variables"' and restarting your IDE.</li>
+            <li>On most flavors of Linux, you can create this by putting the following in your ~/.profile and rebooting:  export ClientUI__FromEnvironmentVariables="This value is from environment variables"</li>
+        </ul>
+    </li>
 </ul>
 
 <div class="card">
