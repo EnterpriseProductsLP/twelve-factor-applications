@@ -13,7 +13,13 @@ namespace GracefulShutdown
         private static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-                .ConfigureServices((hostContext, services) => { services.AddHostedService<TimeWriterService>(); });
+                .ConfigureServices(AddHostedServices);
+        }
+
+        private static void AddHostedServices(HostBuilderContext hostContext, IServiceCollection services)
+        {
+            services.AddHostedService<ExampleHostedService>();
+            services.AddHostedService<TimeWriterService>();
         }
     }
 }
