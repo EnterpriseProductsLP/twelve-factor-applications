@@ -8,21 +8,23 @@ namespace GracefulShutdown
     public class ExampleHostedService : IHostedService
     {
         private readonly ILogger _logger;
+        private readonly IHostApplicationLifetime _appLifetime;
 
         public ExampleHostedService(
             ILogger<ExampleHostedService> logger,
             IHostApplicationLifetime appLifetime)
         {
             _logger = logger;
-
-            appLifetime.ApplicationStarted.Register(OnStarted);
-            appLifetime.ApplicationStopping.Register(OnStopping);
-            appLifetime.ApplicationStopped.Register(OnStopped);
+            _appLifetime = appLifetime;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("1. StartAsync has been called.");
+            
+            _appLifetime.ApplicationStarted.Register(OnStarted);
+            _appLifetime.ApplicationStopping.Register(OnStopping);
+            _appLifetime.ApplicationStopped.Register(OnStopped);
 
             return Task.CompletedTask;
         }
